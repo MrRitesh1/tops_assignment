@@ -1,10 +1,6 @@
-#include <stdio.h>
-
-int main()
-{
-    printf("---------------------------------------");
-for(int i = 82746; i >= 64728; i-- ){
-    printf("%d \n",i);
-}
-    return 0;
-}
+  // printf (" Select operation (+, -, *, /) in Calculator :-  ");  
+    // scanf ("%c", &opt); 
+    // printf (" \n Enter this first number: ");  
+    // scanf(" %d", &n1);  
+    // printf (" Enter this second number: ");  
+    // scanf (" %d", &n2); 
