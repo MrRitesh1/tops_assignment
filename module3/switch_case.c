@@ -2,6 +2,7 @@
 
 int main()
 {
+    printf("Days :- \n");
     switch (1)
     {
     case 1:
