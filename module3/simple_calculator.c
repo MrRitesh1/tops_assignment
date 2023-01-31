@@ -1,6 +1,7 @@
 #include <stdio.h>
-int main(){
-    printf("simple calculator :\n\n");
+int main()
+{
+    printf("simple calculator \n\n");
 
     int x;
     int y;
