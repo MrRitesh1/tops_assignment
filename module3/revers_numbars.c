@@ -3,8 +3,17 @@
 int main()
 {
     printf("---------------------------------------");
-for(int i = 82746; i >= 64728; i-- ){
-    printf("%d \n",i);
-}
+    int num, r;
+    printf("enter namber: ");
+    scanf("%d", &num);
+
+    while (num != 0)
+    {
+        r = num % 10;
+        //  rev = rev * 10 + r;
+        num /= 10;
+
+        printf("%d", r);
+    }
     return 0;
 }
