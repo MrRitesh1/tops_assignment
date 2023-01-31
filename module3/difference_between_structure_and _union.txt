@@ -1,0 +1,33 @@
+Difference between Structure and Union
+1)
+Structure  ->  The struct keyword is used to define a structure.
+Union      ->  The union keyword is used to define union.
+
+2)
+
+Structure  ->  When the variables are declared in a structure, the compiler allocates memory to each variables member. The size of a structure is equal or greater to the sum of the sizes of each data member.
+Union      ->  When the variable is declared in the union, the compiler allocates memory to the largest size variable member. The size of a union is equal to the size of its largest data member size.
+
+3)
+
+Structure  ->  Each variable member occupied a unique memory space.
+Union      ->  Variables members share the memory space of the largest size variable.
+
+4)
+
+Structure  ->  Changing the value of a member will not affect other variables members.
+Union      ->  Changing the value of one member will also affect other variables members.
+
+5)
+
+Structure  ->  Each variable member will be assessed at a time.
+Union      ->  Only one variable member will be assessed at a time.
+
+6)
+
+Structure  ->  All variable members store some value at any point in the program.
+Union      ->  Exactly only one data member stores a value at any particular instance in the program.
+
+7)
+Structure  ->  It is used to store different data type values.
+Union      ->  It is used for storing one at a time from different data type values.
