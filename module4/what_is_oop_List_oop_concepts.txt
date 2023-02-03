@@ -1,0 +1,22 @@
+---------------------------------------------------------------------------
+
+What is OOP? List OOP concepts
+============================================================================
+FulForm By OOP = Object-oriented programming 
+
+=============================================================================
+What is OOP?
+=   Procedural programming is about writing procedures or functions that 
+perform operations on the data, while object-oriented programming is 
+about creating objects that contain both data and functions.  
+==============================================================================
+OOPS Concepts
+  - class
+  - Object
+  - constructor
+  - destructor
+  - inheritance
+  - polymorphism 
+  - encapsulation
+  - abstraction 
+  ==============================================================================

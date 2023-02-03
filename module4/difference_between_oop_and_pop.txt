@@ -1,0 +1,42 @@
+-------------------------------------------------------------------------------
+Difference between OOP and POP:
+
+OOP = Procedural Oriented Programming 
+POP = Procedural Oriented Programming 
+-------------------------------------------------------------------------------
+1) Basic Definition	
+OOP = Object oriented.	
+POP = structure or procedure-oriented.
+-------------------------------------------------------------------------------
+2) Program Division	
+OOP = Program is divided into objects.	
+POP = Program is divided into functions.
+-------------------------------------------------------------------------------
+3) Approach
+OOP = Bottom-up approach.	
+POP = Top-down approach.
+-------------------------------------------------------------------------------
+4) 
+OOP = Inheritance property is used.	
+POP = Inheritance is not allowed.
+-------------------------------------------------------------------------------
+5)
+OOP = It uses access specifier.	
+POP = It doesn’t use access specifier.
+-------------------------------------------------------------------------------
+6)
+OOP = Encapsulation is used to hide the data.	
+POP = No data hiding.
+-------------------------------------------------------------------------------
+7)
+OOP = Concept of virtual function.	
+POP = No virtual function.
+-------------------------------------------------------------------------------
+8)
+OOP = Object functions are linked through message passing.	
+POP = Parts of program are linked through parameter passing.
+-------------------------------------------------------------------------------
+9)
+OOP = Adding new data and functions is easy	
+POP = Expanding new data and functions is not easy.
+-------------------------------------------------------------------------------
