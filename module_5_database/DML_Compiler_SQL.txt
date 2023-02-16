@@ -1,0 +1,12 @@
+-----------------------------------------------------------------------------------------
+What is DML Compiler in SQL? 
+
+DML is defined by Data Manipulation Language to manipulate data itself with the following 
+commands:
+SELECT : it helps to retrieve data from one or more tables in the database 
+INSERT : it helps to insert data into a existing table 
+UPDATE : it helps to update existing data within a existing table 
+DELETE : it helps to delete all records from a table 
+         It translates DML statements in a query language into low-level 
+         instruction that the query evaluation engine can understand.
+-----------------------------------------------------------------------------------------         

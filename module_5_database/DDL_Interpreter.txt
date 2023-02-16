@@ -1,0 +1,18 @@
+------------------------------------------------------------------------------------------
+What is DDL Interpreter? 
+
+DDL is defined as Data Definition Language : DDL is used to define data
+                                             structures which deals with 
+                                             database descriptions. 
+------------------------------------------------------------------------------------------
+For example, 
+CREATE   : It helps to create database 
+ALTER    : it helps to alter the pre-existing data 
+DROP     : It helps to delete objects or data from the database 
+TRUNCATE : It remove all records from a table 
+COMMENT  : It helps to add comments to the data dictionary. 
+RENAME   : It helps to rename an object in the database 
+           It interprets DDL statements and record them in tables containing metadata. 
+           It is a language in database through which you can make the logical design 
+           of the schemas . 
+------------------------------------------------------------------------------------------

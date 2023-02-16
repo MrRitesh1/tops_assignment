@@ -1,0 +1,27 @@
+------------------------------------------------------------------------------------------------------------------
+What is Data? 
+
+In simple words, data can be facts related to any object in consideration. For example, your name, 
+age, height, weight, etc. are some data related to you. A picture, image, file, pdf, etc. can also be 
+considered data.
+
+------------------------------------------------------------------------------------------------------------------
+What is Database? 
+
+A database is a systematic collection of data. They support electronic storage and manipulation of 
+data. Databases make data management easy. 
+Let us discuss a database example: An online telephone directory uses a database to store data of 
+people, phone numbers, and other contact details. Your electricity service provider uses a database 
+to manage billing, client-related issues, handle fault data, etc. 
+Let us also consider Facebook. It needs to store, manipulate, and present data related to members, 
+their friends, member activities, messages, advertisements, and a lot more. We can provide a 
+countless number of examples for the usage of databases. 
+
+------------------------------------------------------------------------------------------------------------------
+What is Normalization? 
+
+Database Normalization is the most important factor in Database design or Data modeling. Database 
+Normalization is the process to eliminate data redundancies and store the data logically to make data 
+management easier. Database relationships and keys are useful in the Database Normalization 
+process. The Database Normalization was developed by E.F.Codd. In the database normalization 
+process, there are series of rules called Normal Forms.

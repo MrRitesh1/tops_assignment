@@ -1,0 +1,18 @@
+---------------------------------------------------------------------------------------------------------
+What do you understand By Data Redundancy? 
+ 
+In database management, data redundancy refers to the duplication of data in a database. This 
+means that the same piece of data is stored in multiple places within the database. 
+Data redundancy can have both advantages and disadvantages. 
+The main advantage of data redundancy is that it can improve the reliability and availability of the 
+data, since multiple copies of the data are stored. If one copy of the data is lost or becomes 
+unavailable, the other copies can be used to access the data. 
+However, data redundancy can also have some disadvantages. 
+One of the main disadvantages is that it can lead to data inconsistencies, where different copies of 
+the data are not the same. 
+This can be a problem if the data is updated, as the different copies of the data will not be in sync 
+with each other. This can make it difficult to know which copy of the data is correct. 
+Overall, while data redundancy can be useful in some situations, it is important to carefully consider 
+the trade-offs before implementing it.
+
+---------------------------------------------------------------------------------------------------------
