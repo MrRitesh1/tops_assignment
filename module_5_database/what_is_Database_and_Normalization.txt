@@ -25,3 +25,5 @@ Normalization is the process to eliminate data redundancies and store the data l
 management easier. Database relationships and keys are useful in the Database Normalization 
 process. The Database Normalization was developed by E.F.Codd. In the database normalization 
 process, there are series of rules called Normal Forms.
+
+------------------------------------------------------------------------------------------------------------------
