@@ -1,0 +1,28 @@
+------------------------------------------------------------------------------------------
+
+What is trigger and how to create a Trigger in SQL? 
+
+
+A trigger is a set of actions that are run automatically when a specified change 
+operation (SQL INSERT, UPDATE, or DELETE statement) 
+is performed on a specified table. Triggers are useful for tasks such as enforcing
+business rules, validating input data, and keeping an audit trail. 
+
+-----------------------------------------------------------------------------------------
+How to create MySQL triggers?
+
+A trigger is a named database object that is associated with a table, and it 
+activates when a particular event 
+(e.g. an insert, update or delete) occurs for the table. The statement CREATE 
+TRIGGER creates a new trigger in MySQL. Here is the syntax is below. 
+-----------------------------------------------------------------------------------------
+Syntax:
+
+Here is the basic syntax of the CREATE TRIGGER statement: 
+
+CREATE TRIGGER trigger_name
+{BEFORE | AFTER} {INSERT | UPDATE| DELETE } 
+ON table_name FOR EACH ROW 
+trigger_body;
+
+-----------------------------------------------------------------------------------------
