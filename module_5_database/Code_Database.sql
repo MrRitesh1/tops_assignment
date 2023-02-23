@@ -1,6 +1,6 @@
 -- ----------------------------------------------------------------------------------------------------------- 
 drop database Student_Exam;
-drop table exam;
+drop table Salesperson;
 
 -- DataBase Name ------------------------------------------------------------------------------------------------------------
 create database Student_Exam;
@@ -26,7 +26,7 @@ insert into student(Roll_No, student_Name , Branch) values(1, "Jay", "BCA");
 insert into student(Roll_No, student_Name , Branch) values(2, "Chirag", "B.Com");
 insert into student(Roll_No, student_Name , Branch) values(3, "Jignesh", "B.Com");
 insert into student(Roll_No, student_Name , Branch) values(4, "Milan", "BBA");
--- ------------------------------------------------------------------------- 
+-- ------------------------------------------------------------------------------------------------------------------------- 
 create table exam ( 
 Roll_No int , 
 S_Code varchar(10) ,
@@ -72,20 +72,94 @@ values
 (6,"Philip","Mathew",750000,"2013-01-01 12:00:00","Services"),
 (7,"TestName1","123",650000,"2013-01-01 12:00:00","Services"),
 (8,"TestNmae2","Lname%",600000,"2013-02-01 12:00:00","Insurance");
--- a) Get First_Name from employee table using Tom name “Employee Name”.
+-- ********************************************************************************************************************
+--  Date And Time Format (fsp)
+/* */
+/*
+  %Y = Year for 4 digit  ex: 2023
+  %y = Year for 2 digit  ex: 23
+  %M = Month name in full (January to December)
+  %m = Month name as a numeric value (00 to 12)
+  %d = Day of the month as a numeric value (01 to 31)
+  %W = Weekday name in full (Sunday to Saturday)
+  %a = Abbreviated weekday name (Sun to Sat)
+  %b = Abbreviated month name (Jan to Dec)
+  %H = Hour (00 to 23)
+  %h = Hour (00 to 12)
+  %i = Minutes (00 to 59)
+  %S = Seconds (00 to 59)
+  %s = Seconds (00 to 59)
+  %T = Time in 24 hour format (hh:mm:ss)
+  %p = AM or PM
+  %r = Time in 12 hour AM or PM format (hh:mm:ss AM/PM)
+*/
+SELECT DATE_FORMAT(Joinig_Date,"%d-%b-%y %H.%i.%S %p ") FROM employee; 
 
+
+
+-- ********************************************************************************************************************
+
+-- a) Get First_Name from employee table using Tom name “Employee Name”.
+SELECT  First_Name FROM Employee WHERE First_Name ="Tom";
+
+UPDATE Employee SET First_Name = "Tom" WHERE Employee_Id = 2;
+
+SELECT  *FROM Employee WHERE First_Name ="Jerry";
+
+-- ********************************************************************************************************************
 
 -- b) Get FIRST_NAME, Joining Date, and Salary from employee table.
 select First_Name, Joinig_Date ,Salary from Employee;
 
+-- ********************************************************************************************************************
+
 -- c) Get all employee details from the employee table order by First_Name Ascending and Salary descending? 
 select * from Employee order by First_Name ,Salary desc;
+select First_Name,Salary from Employee order by First_name, Salary desc;
+
+-- ********************************************************************************************************************
 
 -- d) Get employee details from employee table whose first name contains ‘J’
 select * from Employee where First_Name like 'J%'; 
+select * from Employee where First_name  between  "j" and "l";
+select * from Employee where First_name like "Ro%";
+select * from Employee where First_name like "tom%";
+select * from Employee where First_name like "%oh%";
+select * from Employee where First_name like "r%" or First_name like "t%";
+select * from Employee where First_name not like "r%";
+select * from Employee where binary First_name like "t%";
+select * from Employee where First_name like "m%l";
+select * from Employee where First_name like "__rr%";
+select * from Employee where First_name like "_h%";
+select * from Employee where First_name like "t_s%";
+select * from Employee where binary First_name like "p_i%";
+select * from Employee where binary First_name like "P_i%";
+
+-- ********************************************************************************************************************
+
+-- e) Get department wise maximum salary from employee table order by salaryascending?
+select max(Salary) from Employee;
+
+select Department,max(Salary) from Employee group by Department order by Salary asc ;
+
+-- select Department,max(Salary) from Employee group by Department order by Salary ;
+		
+-- select Department,Salary from Employee group by Department order by Salary;
+select Department,max(Salary) from Employee group by Department order by Salary;
+
+-- ********************************************************************************************************************
+
+-- f) Select first_name, incentive amount from employee and incentives table forthose employees who have incentives and incentive amount greater than 3000
 
 
--- ------------------------------------------------------------------------------------- 
+
+
+-- ********************************************************************************************************************
+
+-- g) Create After Insert trigger on Employee table which insert records in viewtable
+
+
+-- ------------------------------------------------------------------------------------------------------------------- 
 create table Incentive (
 Employee_ref_Id int,
 Incentive_date varchar(20),
@@ -105,20 +179,29 @@ values
 (2,"2013-01-01",3500);
 
 
--- ----------------------------------------------------------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------------------------------------------------------------
 -- Salesperson_and_Customer ---------------------------------------------------------------------------------------------------------
--- ----------------------------------------------------------------------------------------------------------------------------
- 
+-- ----------------------------------------------------------------------------------------------------------------------------------
+
  create table Salesperson(
  SNo int auto_increment,
  SNAME varchar(20),
  CITY varchar(20),
- COMM int,
+ COMM FLOAT,
  
 primary Key(SNo)
  );
 
--- ----------------------------------------------------------------------------
+insert into Salesperson (SNo , SNAME , CITY , COMM )
+values
+(1001 , 'Peel' , 'London' , .12),
+(1002 , 'Serres' , 'San Jose' , .13),
+(1003 ,' Motika', 'London' , .11),
+(1004 , 'Rafkin' , 'Barcelona' , .15),
+(1007, 'Axelro' , 'New York' , .1);
+
+-- --------------------------------------------------------------------------------------------------------------------
+
 create table Customer (
 CNM int ,
 CNAME varchar(30),
@@ -129,3 +212,35 @@ SNo int,
 primary Key(CNM),
 foreign key (SNo) references Salesperson (SNo)
  );
+ 
+insert into Customer (CNM , CNAME , CITY , RATING , SNo)
+values
+(201 , 'Hoffman' , 'London' , 100 , 1001),
+(202 , 'Giovanne' , 'Roe' , 200 , 1003),
+(203 ,'Liu', 'San Jose' , 300 , 1002),
+(204 , 'Grass' , 'Barcelona' , 100 , 1002),
+(205 , 'Clemens' , 'London' , 300 , 1007),
+(206 , 'Pereira' , 'Roe' , 100 , 1004);
+
+-- ********************************************************************************************************************
+
+-- b)	Names and cities of all salespeople in London with commission above 0.12
+		select * from Salesperson where CITY = "London" and  COMM > 0.12 ;
+
+-- ********************************************************************************************************************
+
+-- c)	All salespeople either in Barcelona or in London
+	    select * from Salesperson where CITY = "London" or CITY = "Barcelona" ;
+
+-- ********************************************************************************************************************
+
+-- a)	All salespeople with commission between 0.10 and 0.12. (Boundary values should be excluded).
+		select * from Salesperson where COMM > 0.10 and COMM < 0.12;
+
+	-- ********************************************************************************************************************
+
+      
+-- b)	All customers excluding those with rating <= 100 unless they are located in Rome  
+		
+		select CNAME as "Customer Name" ,CITY, RATING from Customer WHERE (RATING > 100) OR (RATING <= 100 AND CITY = 'Rome');
+		select CNAME as "Customer Name" ,CITY, RATING from Customer where RATING >100 or CITY = "rome";
