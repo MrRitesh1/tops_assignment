@@ -150,8 +150,9 @@ select Department,max(Salary) from Employee group by Department order by Salary;
 -- ********************************************************************************************************************
 
 -- f) Select first_name, incentive amount from employee and incentives table forthose employees who have incentives and incentive amount greater than 3000
-
-
+     select Employee.first_name,sum(Incentive.Incentuve_Amount) as Incentive from Employee inner
+     join Incentive on Employee.Employee_id = Incentive.Employee_ref_Id
+		 where incentive.Incentuve_Amount or Incentive.Incentuve_Amount > 3000 group by Employee.First_name;
 
 
 -- ********************************************************************************************************************
@@ -244,3 +245,5 @@ values
 		
 		select CNAME as "Customer Name" ,CITY, RATING from Customer WHERE (RATING > 100) OR (RATING <= 100 AND CITY = 'Rome');
 		select CNAME as "Customer Name" ,CITY, RATING from Customer where RATING >100 or CITY = "rome";
+
+	-- ********************************************************************************************************************
