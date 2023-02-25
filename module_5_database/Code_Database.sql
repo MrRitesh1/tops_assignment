@@ -1,6 +1,6 @@
 -- ----------------------------------------------------------------------------------------------------------- 
-drop database Student_Exam;
-drop table Salesperson;
+-- drop database Salesperson_and_Customer;
+-- drop table Salesperson;
 
 -- DataBase Name ------------------------------------------------------------------------------------------------------------
 create database Student_Exam;
@@ -72,7 +72,27 @@ values
 (6,"Philip","Mathew",750000,"2013-01-01 12:00:00","Services"),
 (7,"TestName1","123",650000,"2013-01-01 12:00:00","Services"),
 (8,"TestNmae2","Lname%",600000,"2013-02-01 12:00:00","Insurance");
--- ********************************************************************************************************************
+
+create table Incentive (
+Employee_ref_Id int,
+Incentive_date varchar(20),
+Incentuve_Amount int,
+
+primary Key (Incentuve_Amount),
+foreign key (Employee_ref_Id) references Employee (Employee_Id)
+
+);
+
+insert into Incentive(Employee_ref_Id , Incentive_date , Incentuve_Amount)
+values
+(1,"2013-02-01",5000),
+(2,"2013-02-01",3000),
+(3,"2013-02-01",4000),
+(1,"2013-01-01",4500),
+(2,"2013-01-01",3500);
+
+-- ********* Qusan Ansar ***********************************************************************************************
+
 --  Date And Time Format (fsp)
 /* */
 /*
@@ -157,27 +177,35 @@ select Department,max(Salary) from Employee group by Department order by Salary;
 
 -- ********************************************************************************************************************
 
--- g) Create After Insert trigger on Employee table which insert records in viewtable
-
-
--- ------------------------------------------------------------------------------------------------------------------- 
-create table Incentive (
-Employee_ref_Id int,
-Incentive_date varchar(20),
-Incentuve_Amount int,
-
-primary Key (Incentuve_Amount),
-foreign key (Employee_ref_Id) references Employee (Employee_Id)
-
+-- g) Create After Insert trigger on Employee table which insert records in view table
+create table Backup_Employee (
+Employee_Id int ,
+F_Name varchar(30),
+L_Name varchar(30),
+Salary int,
+Joinig_Date varchar(30),
+Department varchar(30)
 );
 
-insert into Incentive(Employee_ref_Id , Incentive_date , Incentuve_Amount)
-values
-(1,"2013-02-01",5000),
-(2,"2013-02-01",3000),
-(3,"2013-02-01",4000),
-(1,"2013-01-01",4500),
-(2,"2013-01-01",3500);
+-- Trigger set -------------------------------------------------------------------------------------------
+
+ /*Trigger Name = */ 
+  -- CREATE TRIGGER Backup_Employee;
+
+  -- AFTER INSERT ON Employee
+  INSERT INTO backup_employee
+  VALUES(new.Employee_Id , new.First_Name , new.Last_Name , new.Salary , new.Joinig_Date , new.Department);
+
+----- View --------------------------------------------------------------------------------------------
+  CREATE VIEW Employee_View AS SELECT * FROM employee WHERE Salary > 750000;
+
+--  Insert new Data ----------------------------------------
+  insert into Employee(Employee_Id , First_Name , Last_Name , Salary , Joinig_Date , Department) 
+  values (9,"Chirag","Modi",24300,"2013-01-01 12:00:00","IT");
+
+  insert into Employee(Employee_Id , First_Name , Last_Name , Salary , Joinig_Date , Department) 
+  values
+  (10,"Jignesh","Dankhara",7505080,"2013-01-01 12:00:00","Managar");
 
 
 -- ---------------------------------------------------------------------------------------------------------------------------------
