@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="./registration.css">
+</head>
+<!-- Internal CSS -->
+<style>
+    .form_bodi {
+        background-color: rgb(177, 239, 239);
+        height: 100%;
+        margin-top: 5px;
+        padding: 20px;
+    }
+
+    .button {
+        border: 1px solid black;
+        border-radius: 20px;
+    }
+
+    .button:hover {
+        width: 80px;
+        height: 20px;
+        font-size: 15px;
+    }
+</style>
+
+<body>
+    <!--  Inline CSS -->
+    <div class="hedig" style="
+           background-color: aqua; 
+           padding: 2px;
+           text-align: center;
+           border-radius: 10px;
+           ">
+        <h1 class="hedig_text">Individual Registration</h1>
+    </div>
+    <div class="form_bodi">
+        <div class="usar_id">
+            <h2 class="usar_id_text">Usar Particulars</h2>
+            <!-- <center> -->
+            <div class="usar_particulars">
+                <label>Login ID : </label>
+                <input class="id_password" type="text" name="Login_ID" required><br>
+                <label> Password : </label>
+                <input class="id_password" type="password" name="Login_ID" required><br>
+                <label>Confirm Password : </label>
+                <input class="id_password" type="password" name="Login_ID" required><br>
+            </div>
+            <!-- </center> -->
+        </div>
+        <div class="personal">
+            <h2 class="personal_text">Personal Particulars</h2>
+            <div class="personal_particulars">
+                <label> First Name : </label>
+                <input class="info" type="text" name="first name" required>
+                <label>Middle Name : </label>
+                <input class="info" type="text" name="middle name" required>
+                <label> Last Name : </label>
+                <input class="info" type="text" name="last name" required>
+                <br>
+                <label> Email ID : </label>
+                <input class="info" type="email" name="emil id" required>
+
+                <label> Mobile Numbers : </label>
+                <input class="info" type="number" name="mobile numbers" required><br>
+                <label>City : </label>
+                <select name="city" class="text_bob">
+                    <option value="Select">Select</option>
+                    <option value="surat">Surat</option>
+                    <option value="ahemdabad">Ahemdabad</option>
+                    <option value="bharuch">Bharuch</option>
+                    <option value="bhavnagar">Bhavnagar</option>
+                </select>
+                <label>Country : </label>
+                <select name="country" class="text_bob">
+                    <option value="Select">Select</option>
+                    <option value="india">India</option>
+                    <option value="america">America</option>
+                    <option value="canada">Canada</option>
+                    <option value="rasiya">Rasiya</option>
+                </select><br><br>
+
+            </div>
+        </div>
+        <div class="accuount">
+            <h2 class="accuount_text">Accuount Particulars</h2>
+            <label> 15 Digita Accuount No : </label>
+            <input class="info" type="number" name="15 digita accuount no" required>
+            <label>Nick Name : </label>
+            <input class="info" type="text" name="nick name" required>
+            <label>Fund Transfer : </label>
+            <select name="fund_transfer" class="text_bob">
+                <option value="Select">Select</option>
+                <option value="RTGS">RTGS</option>
+                <option value="NEFT">NEFT</option>
+            </select><br><br>
+        </div>
+        <div>
+            <h2>DECLARATION</h2>
+            <p>I have read, understood and hereby agree to the Terms and Conditions in respect
+                of all products and channels.</p>
+            <p> I understand that any changes in the terms and conditions applicable to
+                this relationship would be made available to me on request at any 10B branches.<br>
+                I confirm that all accounts under this login name are operated singly and in case
+                of joint account operated by either or survivor anyone or survivor(s) under<br>
+                his her joint name respectively, I do hereby declare that information furnished
+                in this form is true to the best of my knowledge and belief.</p>
+        </div>
+        <div>
+            <input class="button" type="submit" style="background-color: cadetblue; color: aliceblue;" name="Submit">
+            <input class="button" type="reset" style="
+            background-color: cadetblue; 
+            color: aliceblue; " name="Reset">
+        </div>
+    </div>
+
+</body>
+
+</html>
