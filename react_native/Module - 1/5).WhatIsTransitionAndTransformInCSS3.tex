@@ -1,0 +1,40 @@
+What is Transition and Transform in CSS3 ?
+
+The Transform property in CSS moves or modifies the appearance of an element, 
+whereas the Transition property seamlessly and gently transitions the element from one state to another.
+
+---------------------------------------------------------------------------------------------------
+-> CSS Transform Property
+
+Transform property in CSS is invoked when there is a change in the state of the HTML element.
+You can rotate, skew, move and scale elements. It occurs when the state of an element is modified, 
+like when you hover the mouse over a button or perform a mouse-click.
+We will see how this works in further sections of this blog.
+
+There are three variations of CSS Transform properties in 2D.
+
+transform: TpropertyX(x);
+transform: TpropertyY(y);
+transform : Tproperty(x,y);
+Here Tproperty refers to the element property you want to change, 
+x and y can be negative or positive values. CSS Transform property in 3D includes the Z-axis. 
+X is the width, Y is the height, and Z gives the depth of the screen.
+
+------------------------------------------------------------------------------------------------------
+-> Translate
+
+Translate property changes the position left/right and up/down of the element on the page based 
+on the given X (horizontal) and Y (vertical) axes parameters. The positive X-axis parameter 
+moves the element to the right, and the negative will do so to the left. The positive Y-axis 
+parameter moves the element down, and the positive does so towards up.
+
+
+----------------------------Exampals----------------------------
+#box :hover{ transform: translate(100%,60%);}
+#box :hover{ transform: skew(30deg,30deg);
+#box :hover{ transform: scale(0.5);}
+#box4:hover{ transform: rotate(25deg);}
+#box:hover
+{
+    transform: rotate(120deg) scale(1.5) translateY(-100px);
+}
