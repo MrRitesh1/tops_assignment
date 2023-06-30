@@ -1,25 +1,27 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html>
-
   <head>
-
     <script>
-
       function Greet() {
-
-        alert('Hello World!');
-
+        alert("Hello World!");
       }
-
+      function clickevent() {
+        document.write("This is JavaTpoint");
+      }
+      function focusevent() {
+        document.getElementById("input1").style.background = " aqua";
+      }
+      function keydownevent() {
+        document.getElementById("input1");
+        alert("Pressed a key");
+      }
     </script>
-
   </head>
-
   <body>
+    <input type="text" id="input1" onfocus="focusevent()" />
+    <button type="button" onclick="Greet()">Please click here!</button>
 
-    <button type="button" onclick="Greet()">Please click here! </button>
-
+    <input type="button" onclick="clickevent()" value="Who's this?" />
+    <input type="text" id="input1" onkeydown="keydownevent()" />
   </body>
-
 </html>
