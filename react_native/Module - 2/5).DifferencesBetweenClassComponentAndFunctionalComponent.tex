@@ -1,0 +1,67 @@
+What are the differences between a class component and functional component ?
+
+1)
+Functional Components : A functional component is just a plain JavaScript 
+                        pure function that accepts props as an argument and 
+                        returns a React element(JSX).
+
+Class Components : A class component requires you to extend from React. 
+                   Component and create a render function that returns a React element.
+
+2)
+Functional Components : There is no render method used in functional components.
+
+Class Components : It must have the render() method returning JSX 
+                   (which is syntactically similar to HTML)
+
+3)
+Functional Components : Functional component run from top to bottom and 
+                        once the function is returned it can’t be kept alive.
+
+Class Components : The class component is instantiated and different life cycle 
+                   method is kept alive and is run and invoked depending on the 
+                   phase of the class component.
+
+4)
+Functional Components : Also known as Stateless components as they simply 
+                        accept data and display them in some form, 
+                        they are mainly responsible for rendering UI.
+
+Class Components : Also known as Stateful components because they 
+                   implement logic and state
+
+5)
+Functional Components : React lifecycle methods (for example, componentDidMount) 
+                        cannot be used in functional components
+
+Class Components : React lifecycle methods can be used inside 
+                   class components (for example, componentDidMount)
+
+6)
+Functional Components : Hooks can be easily used in functional 
+                        components to make them Stateful.
+                        example: const [name,SetName]= React.useState(‘ ‘)
+                       
+
+Class Components : It requires different syntax inside a class component to implement hooks.   
+                   example: constructor(props) {
+                         super(props);
+                         this.state = {name: ‘ ‘}
+                   }
+                
+
+7)
+Functional Components : Constructors are not used.
+
+Class Components : 	Constructor is used as it needs to store state
+
+8)
+Functional Components :  example: const Car=()=> {
+                                       return <h2>Hi, I am also a Car!</h2>;
+                                  }
+
+Class Components : example: class Car extends React.Component {
+                                    render() {
+                                       return <h2>Hi, I am a Car!</h2>;
+                                    }
+                            }
