@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>dropdown list with array values</title>
+  </head>
+  <body style="text-align: center">
+    <h1 style="color: green">Create a menu using an array</h1>
+
+    <select id="arr"></select>
+
+    <br /><br />
+
+    <button onclick="GFG_Fun();">click here</button>
+
+    <p id="gfg" style="font-size: 26px; font-weight: bold; color: green"></p>
+
+    <script>
+      var up = document.getElementById("geeks");
+      var down = document.getElementById("gfg");
+      var select = document.getElementById("arr");
+      var elmts = ["JavaScript", "HTML", "CSS", "React Native", "jQuery"];
+      up.innerHTML =
+        "Click on the button to " +
+        "perform the operation" +
+        ".<br>Array - [" +
+        elmts +
+        "]";
+
+      // Main function
+      function GFG_Fun() {
+        for (var i = 0; i < elmts.length; i++) {
+          var optn = elmts[i];
+          var el = document.createElement("option");
+          el.textContent = optn;
+          el.value = optn;
+          select.appendChild(el);
+        }
+        down.innerHTML = "Elements Added";
+      }
+    </script>
+  </body>
+</html>

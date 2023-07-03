@@ -1,0 +1,76 @@
+What is State?
+
+The status of a react class component instance can be described as an 
+object of a collection of observed features that control the component’s 
+behavior. In other words, the component’s state is an entity with some 
+details that can alter during the component’s lifetime.
+
+This data is kept inside a component. This particular aspect is local or owned. 
+The component itself uses the setStatus function to update the state. 
+
+The state is an updated structure that is used to contain and can 
+modify data or information about the component over time. 
+The state change may occur as a user activity or device event response. 
+It decides the actions of the component and how it is to be done by the core 
+of the React component. 
+
+As easy as possible, a state should be held. It is the local state or 
+details of the part. Only in the component or by the component directly 
+can it be accessed or changed. 
+
+Components of react have a built-in state object. 
+The state object is where the property values belonging to the item are stored. 
+The component is restored when the state object changes.
+
+----------------------------------------------------------------------------------
+What are Props?
+
+React is a library focused on components that separate the user interface 
+into reusable little bits. These components have to transmit 
+(send data to each other) in some cases, and the way to transmit data among 
+components is through props. 
+
+“Props” is a special React keyword for proprietary purposes, 
+used for data transmission from component to component. 
+
+But the key part of this is the transmission of data with props in a 
+uniform flow. (parent-to-child route)
+
+In addition, props data are read-only, meaning that parent data 
+cannot be modified by child elements.
+
+---------------------------------------------------------------------------------
+difference between state and props?
+
+1)
+State : State is managed within the component
+
+Props : Props gets passed to the component
+
+2)
+State : State can be changed(mutable)
+
+Props : Props are read only and cannot be changed (immutable)
+
+3)
+State : State can be accessed using the use state hooks in functional 
+        components and in-class components can be accessed using this. State
+
+Props : Props can be accessed in functional component using props 
+        parameter and in-class component, 
+        props can the accessed using this.props
+
+4)
+State : State changes can be asynchronous
+
+Props : Props are read only
+
+5)
+State : State is controlled by react components
+
+Props : Props are controlled by whoever renders the components
+
+6)
+State : State can used to display changes with the component
+
+Props : Props are used to communicate between components

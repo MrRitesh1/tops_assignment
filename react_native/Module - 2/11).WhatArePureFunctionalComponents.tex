@@ -1,0 +1,43 @@
+What are pure functional Components?
+
+Functional components are very useful in React, especially when 
+you want to isolate state management from the component. 
+That’s why they are often called stateless components.
+
+However, functional components cannot leverage the performance 
+improvements and render optimizations that come with React.
+PureComponent since by definition, they are not classes.
+
+If you want React to treat a functional component as a 
+pure component, you’ll have to convert the functional component 
+to a class component that extends React.PureComponent.
+
+
+// FUNCTIONAL COMPONENT
+
+function PercentageStat({ label, score = 0, total = Math.max(1, score) }) {
+  return (
+    <div>
+      <h6>{ label }</h6>
+      <span>{ Math.round(score / total * 100) }%</span>
+    </div>
+  )
+}
+
+
+// CONVERTED TO PURE COMPONENT
+
+class PercentageStat extends React.PureComponent {
+
+  render() {
+    const { label, score = 0, total = Math.max(1, score) } = this.props;
+
+    return (
+      <div>
+        <h6>{ label }</h6>
+        <span>{ Math.round(score / total * 100) }%</span>
+      </div>
+    )
+  }
+
+}
