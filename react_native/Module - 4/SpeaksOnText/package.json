@@ -10,6 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@react-native-voice/voice": "^3.2.4",
     "react": "18.2.0",
     "react-native": "0.72.1"
   },
