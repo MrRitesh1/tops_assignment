@@ -1,0 +1,35 @@
+=> What is Redux Thunk used for?
+
+Redux Thunk is middleware that allows you to return functions, 
+rather than just actions, within Redux. This allows for delayed actions, 
+including working with promises.  One of the main use cases for this 
+middleware is for handling actions that might not be synchronous, 
+for example, using axios to send a GET request. Redux Thunk allows us 
+to dispatch those actions asynchronously and resolve each promise that gets returned.
+
+Installation and Setup
+
+npm install redux-thunk --save 
+yarn add redux-thunk 
+
+
+
+=> What is the second argument that can optionally be passed tosetState 
+and what is its purpose?
+
+The second argument that can optionally be passed to setState is a callback 
+function which gets called immediately after the setState is completed and the 
+components get re-rendered.
+
+ => What is the second argument that can optionally be passed to setState 
+and what is its purpose ?
+
+The second argument that can optionally be passed to setState is a callback function 
+which gets called immediately after the setState is completed and the components 
+get re-rendered. 
+
+If you want your program to update the value of a state using setState and then 
+perform certain actions on the updated value of state then you must specify those 
+actions in a function which should be the second argument of the setState. If we 
+would not do so then those actions will be performed on the previous value of state 
+because of asynchronous nature of setState.

@@ -1,0 +1,40 @@
+
+
+What is a pure component in React?
+Based on the concept of purity in functional programming paradigms, 
+a function is said to be pure if it meets the following two conditions:
+
+Its return value is only determined by its input values
+Its return value is always the same for the same input values
+A React component is considered pure if it renders the same output for 
+the same state and props. For this type of class component, React provides 
+the PureComponent base class. Class components that extend the React.PureComponent 
+class are treated as pure components.
+
+Pure components have some performance improvements and render 
+optimizations since React implements the shouldComponentUpdate() method for them 
+with a shallow comparison for props and state.
+
+How does a pure component work in React?
+In practice, a React pure component looks like the following code:
+
+import React from 'react';
+
+class PercentageStat extends React.PureComponent {
+
+  render() {
+    const { label, score = 0, total = Math.max(1, score) } = this.props;
+
+    return (
+      <div>
+        <h6>{ label }</h6>
+        <span>{ Math.round(score / total * 100) }</span>
+      </div>
+    )
+  }
+
+}
+
+export default PercentageStat;
+
+
