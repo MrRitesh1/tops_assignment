@@ -1,0 +1,69 @@
+DEBUG : - apk
+
+Step 1: Go to the root of the project in the terminal and run the below command:
+
+react-native bundle --platform android --dev false --entry-file index.js --bundle-output 
+android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
+
+Step 2: Go to android directory:
+
+cd android
+
+Step 3: Now in this android folder, run this command
+
+./gradlew assembleDebug
+
+There! you’ll find the apk file in the following path:
+yourProject/android/app/build/outputs/apk/debug/app-debug.apk
+-------------------------------------------------------------------------------------------------------------------------------
+Generating a signing key
+
+You can generate a private signing key using keytool. On Windows keytool must be run from C:\Program Files\Java\jdkx.x.x_x\bin.
+Comand :-  keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
+
+This command prompts you for passwords for the keystore and key, and to provide the Distinguished Name fields for your key. It then generates the keystore as a file called my-release-key.keystore.
+
+The keystore contains a single key, valid for 10000 days. The alias is a name that you will use later when signing your app, so remember to take note of the alias.
+
+Note: Remember to keep your keystore file private and never commit it to version control.
+
+Setting up gradle variables
+Place the my-release-key.keystore file under the android/app directory in your project folder.
+Edit the file ~/.gradle/gradle.properties or android/gradle.properties and add the following (replace ***** with the correct keystore password, alias and key password),
+MYAPP_RELEASE_STORE_FILE=my-release-key.keystore
+MYAPP_RELEASE_KEY_ALIAS=my-key-alias
+MYAPP_RELEASE_STORE_PASSWORD=*****
+MYAPP_RELEASE_KEY_PASSWORD=*****
+
+Note about security: If you are not keen on storing your passwords in plaintext and you are running OSX, you can also store your credentials in the Keychain Access app. Then you can skip the two last rows in ~/.gradle/gradle.properties.
+
+Adding signing config to your app's gradle config
+Edit the file android/app/build.gradle in your project folder and add the signing config,
+
+...
+android {
+    ...
+    defaultConfig { ... }
+    signingConfigs {
+        release {
+            if (project.hasProperty('MYAPP_RELEASE_STORE_FILE')) {
+                storeFile file(MYAPP_RELEASE_STORE_FILE)
+                storePassword MYAPP_RELEASE_STORE_PASSWORD
+                keyAlias MYAPP_RELEASE_KEY_ALIAS
+                keyPassword MYAPP_RELEASE_KEY_PASSWORD
+            }
+        }
+    }
+    buildTypes {
+        release {
+            ...
+            signingConfig signingConfigs.release
+        }
+    }
+}
+...
+Generating the release APK
+Simply run the following in a terminal:
+
+$ cd android && ./gradlew assembleRelease
+
