@@ -38,11 +38,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderRadius: 10,
     alignItems: 'center',
-    height: '70%',
+    height: '60%',
     margin: 10,
   },
   image: {
-    height: 200,
+    height: 150,
     width: '100%',
     backgroundColor: 'red',
     borderRadius: 10,

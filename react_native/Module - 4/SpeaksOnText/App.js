@@ -9,6 +9,7 @@ import {
   View,
 } from 'react-native';
 import Voice from '@react-native-voice/voice';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const App = () => {
   const [result, setResult] = useState('');
@@ -70,6 +71,12 @@ const App = () => {
           </TouchableOpacity> */}
         </View>
       </View>
+      {/* <Icon.Button name="facebook" size={60} backgroundColor="#3b5998">
+        <Text style={{fontFamily: 'Arial', fontSize: 15}}>
+          Login with Facebook
+        </Text>
+      </Icon.Button>
+      <Icon name="rocket" size={60} color="#900" /> */}
     </View>
   );
 };

@@ -8,6 +8,8 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import APIcallAxios from './src/api_call';
 import WelcomeScreen from './src/welcome';
 import LoginScreen from './src/login';
+import Task from './src/task';
+import AddTask from './src/addTask';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -18,6 +20,8 @@ const App = () => {
         <Stack.Screen name="welcome" component={WelcomeScreen} />
         <Stack.Screen name="login" component={LoginScreen} />
         <Stack.Screen name="home" component={BottomTab} />
+        <Stack.Screen name="task" component={Task} />
+        <Stack.Screen name="addTask" component={AddTask} />
       </Stack.Navigator>
     </NavigationContainer>
   );
